@@ -11,8 +11,16 @@ axios.get(endpoint)
 
     console.log(email);
 
+    listElement.innerHTML = createListItem(email);
+
   })
   .catch(error => {
     console.log(error);
     console.log('errore!');
   })
+
+
+function createListItem(string) {
+  const item = `<li>${string}</li>`;
+  return item;
+}
