@@ -35,7 +35,7 @@ function createEmailList(itemsNumber) {
 function createListItems(num) {
   let items = '';
   for (let i = 0; i < num; i++) {
-    items += '<li class="l-item"></li>'
+    items += '<li class="l-item list-group-item"></li>'
   }
   listElement.innerHTML = items;
 };
