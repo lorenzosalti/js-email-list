@@ -9,17 +9,17 @@ createListItems(10);
 
 const listItemElements = listElement.querySelectorAll('.l-item');
 
-console.log(listItemElements);
 
-for (let i = 0; i < 10; i++) {
+
+listItemElements.forEach((element) => {
   axios.get(endpoint)
     .then((response) => {
 
       console.log(response);
 
-      const email = response.data.response;
+      element.innerHTML = response.data.response;
 
-      console.log(email);
+      // console.log(email);
 
       // items += createListItem(email);
 
@@ -28,7 +28,32 @@ for (let i = 0; i < 10; i++) {
       console.log(error);
       console.log('errore!');
     })
-}
+})
+
+
+
+
+
+// console.log(listItemElements);
+
+// for (let i = 0; i < 10; i++) {
+//   axios.get(endpoint)
+//     .then((response) => {
+
+//       console.log(response);
+
+//       const email = response.data.response;
+
+//       console.log(email);
+
+//       // items += createListItem(email);
+
+//     })
+//     .catch(error => {
+//       console.log(error);
+//       console.log('errore!');
+//     })
+// }
 
 
 
