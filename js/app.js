@@ -4,31 +4,47 @@ const listElement = document.getElementById('email-list');
 
 const endpoint = 'https://flynn.boolean.careers/exercises/api/random/mail';
 
-
-createListItems(10);
-
-const listItemElements = listElement.querySelectorAll('.l-item');
+createEmailList(10);
 
 
 
-listItemElements.forEach((element) => {
-  axios.get(endpoint)
-    .then((response) => {
 
-      console.log(response);
 
-      element.innerHTML = response.data.response;
 
-      // console.log(email);
+function createEmailList(itemsNumber) {
 
-      // items += createListItem(email);
+  createListItems(itemsNumber);
 
-    })
-    .catch(error => {
-      console.log(error);
-      console.log('errore!');
-    })
-})
+  const listItemElements = listElement.querySelectorAll('.l-item');
+
+  listItemElements.forEach((element) => {
+    axios.get(endpoint)
+      .then((response) => {
+
+        console.log(response);
+
+        element.innerHTML = response.data.response;
+
+        // console.log(email);
+
+        // items += createListItem(email);
+
+      })
+      .catch(error => {
+        console.log(error);
+        console.log('errore!');
+      })
+  })
+}
+
+
+function createListItems(num) {
+  let items = '';
+  for (let i = 0; i < num; i++) {
+    items += '<li class="l-item"></li>'
+  }
+  listElement.innerHTML = items;
+}
 
 
 
@@ -64,13 +80,7 @@ listItemElements.forEach((element) => {
 
 
 
-function createListItems(num) {
-  let items = '';
-  for (let i = 0; i < num; i++) {
-    items += '<li class="l-item"></li>'
-  }
-  listElement.innerHTML = items;
-}
+
 
 
 
