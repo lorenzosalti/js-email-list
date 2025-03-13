@@ -1,10 +1,14 @@
 const listElement = document.getElementById('email-list');
 
+const btnElement = document.getElementById('refresh-list');
+
 const endpoint = 'https://flynn.boolean.careers/exercises/api/random/mail';
 
 createEmailList(10);
 
-
+btnElement.addEventListener('click', function () {
+  console.log('ho cliccato');
+});
 
 
 
