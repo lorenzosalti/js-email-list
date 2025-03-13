@@ -6,8 +6,11 @@ const endpoint = 'https://flynn.boolean.careers/exercises/api/random/mail';
 
 createEmailList(10);
 
+// evento che invoca nuovamente la funzione createEmailList alla pressione del bottone
 btnElement.addEventListener('click', function () {
-  console.log('ho cliccato');
+
+  createEmailList(10);
+
 });
 
 
