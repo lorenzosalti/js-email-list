@@ -4,6 +4,7 @@ const btnElement = document.getElementById('refresh-list');
 
 const endpoint = 'https://flynn.boolean.careers/exercises/api/random/mail';
 
+
 createEmailList(10);
 
 // evento che invoca nuovamente la funzione createEmailList alla pressione del bottone
